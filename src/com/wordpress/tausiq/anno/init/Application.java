@@ -1,5 +1,6 @@
 package com.wordpress.tausiq.anno.init;
 
+import com.wordpress.tausiq.anno.scope.PrototypeScope;
 import com.wordpress.tausiq.anno.scope.SingletonScope;
 import com.wordpress.tausiq.anno.service.OfferService;
 import org.springframework.context.ApplicationContext;
@@ -28,5 +29,15 @@ public class Application {
 
         SingletonScope singletonScope3 = applicationContext.getBean("singletonScope", SingletonScope.class);
         System.out.println(singletonScope3);
+
+        // Prototype scope
+        PrototypeScope prototypeScope = applicationContext.getBean("prototypeScope", PrototypeScope.class);
+        System.out.println(prototypeScope);
+
+        PrototypeScope prototypeScope2 = applicationContext.getBean("prototypeScope", PrototypeScope.class);
+        System.out.println(prototypeScope2);
+
+        PrototypeScope prototypeScope3 = applicationContext.getBean("prototypeScope", PrototypeScope.class);
+        System.out.println(prototypeScope3);
     }
 }
