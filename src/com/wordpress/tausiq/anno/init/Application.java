@@ -1,5 +1,6 @@
 package com.wordpress.tausiq.anno.init;
 
+import com.wordpress.tausiq.anno.properties.PropertiesExample;
 import com.wordpress.tausiq.anno.scope.PrototypeScope;
 import com.wordpress.tausiq.anno.scope.SingletonScope;
 import com.wordpress.tausiq.anno.service.OfferService;
@@ -39,5 +40,10 @@ public class Application {
 
         PrototypeScope prototypeScope3 = applicationContext.getBean("prototypeScope", PrototypeScope.class);
         System.out.println(prototypeScope3);
+
+        // Properties example
+        PropertiesExample propertiesExample = applicationContext.getBean("propertiesExample", PropertiesExample.class);
+        System.out.println(propertiesExample.getBaseURL());
+        System.out.println(propertiesExample.getInterval());
     }
 }

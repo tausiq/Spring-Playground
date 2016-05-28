@@ -13,4 +13,7 @@
     <!-- Look for the annotations in this base-package -->
     <context:component-scan base-package="com.wordpress.tausiq.anno"/>
 
+    <!-- Define properties -->
+    <context:property-placeholder location="com/wordpress/tausiq/anno/app.properties"/>
+
 </beans>
