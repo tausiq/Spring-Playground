@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Uncomment the following block to enable xml-based configuration -->
+
+    <!-- Works like HashMap. Give it an arbitrary name and value will be a concrete class-->
+    <bean name="offerRepoBean" class="com.wordpress.tausiq.xml.repo.StubOfferRepoImpl"/>
+
+    <!-- Another bean -->
+    <bean name="offerServiceBean" class="com.wordpress.tausiq.xml.service.OfferServiceImpl">
+        <!-- We have a property in OfferServiceImpl named offerRepo
+            initializing the offerRepo with a reference defined before -->
+        <property name="offerRepo" ref="offerRepoBean"/>
+    </bean>
+
+    <!-- Constructor Injection -->
+    <bean name="offerServiceBean2" class="com.wordpress.tausiq.xml.service.OfferServiceImpl" autowire="byType">
+        <!--<constructor-arg index="0" ref="offerRepoBean"/>-->
+    </bean>
+
+</beans>
